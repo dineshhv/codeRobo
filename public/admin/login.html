@@ -1,0 +1,39 @@
+<div class="large-12 columns nopadding" id="main" ng-class="{home: homescreen}" >
+
+<div class="large-4 large-centered columns" >
+    <form name="loginform"  ng-submit="loginform.$valid && userLogin()" novalidate>
+    	{{adminloginCtrl.user.username}}
+ 		<div class="row">
+ 			<div class="large-12 columns" style="text-align:center">
+    			<h4>CodeRobo - admin</h4>
+    		</div>
+    	</div>
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Username
+              <input type="text" placeholder="" ng-model="user.username" required/>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Password
+              <input type="password" placeholder="" ng-model="user.password" required/>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <!-- <div class="button tiny expand">login</div> -->
+            <button class="button tiny expand custom">login</button>
+          </div>
+        </div>
+        <div class="row" style="display:none;">
+          <div class="large-12 columns">
+            Not a member? <a href="#newbot">Sign up now</a>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>
+<div class="large-12 columns nopadding"  ng-include="templateLoc.footer"></div>

@@ -1,0 +1,22 @@
+<div class="large-12 medium-12 page-bar  block-display">
+	<ul class="page-breadcrumb">
+		<li data-ng-repeat="item in breadCrumbs">
+			<i class="fa fa-home" data-ng-if="$index == 0"></i>
+			<a href="#{{item.url}}">&nbsp; {{item.nameSpace.name}}</a>
+			<i class="fa fa-angle-right" data-ng-if="$index < breadCrumbs.length-1"></i>
+		</li>
+		<!-- <li>
+			<i class="fa fa-home"></i>
+			<a href="#/dashboard">Dashboard</a>
+			<i class="fa fa-angle-right"></i>
+		</li>
+		<li>-->
+			<!-- <i class="fa fa-home"></i> -->
+		<!--	<a href="#/dashboard/managepost">Manage Post</a>
+			<i class="fa fa-angle-right"></i>
+		</li>
+		<li>
+			<a href="#/dashboard/managepost/createpost">Create Post</a>
+		</li> -->
+	</ul>
+</div>

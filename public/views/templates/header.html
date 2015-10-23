@@ -1,0 +1,129 @@
+<nav class="top-bar" data-topbar role="navigation" data-options="is_hover:false">
+    <div class="container">
+      <div class="title-area">
+          <div class="name" ng-class="{hide: homescreen}">
+            <h1 ><a href="#/">codeRobo</a></h1>
+          </div>
+      </div>
+      <!-- {{headerMenu.item1}}  -->
+      <section class="top-bar-section" >
+     <!--  ng-class="{hide: dashscreen}" -->
+        <ul class="right" ng-show="panelshow" >
+        <li ng-repeat="menuitem in headerMenu | orderBy:'position'"><a href="#{{menuitem.target}}">{{menuitem.label}}</a></li>
+         <!--  <li><a href="#/newbot"><i class="fa fa-user"></i> Register</a></li>
+          <li><a ng-click="showLogin()"><i class="fa fa-sign-in" ></i> login</a></li> -->
+          
+          
+        </ul>
+        <div ng-show="loginShow" class="loginpanel" >
+            <div class="row">
+              <div class="large-12 columns">
+                <form name="loginform"  ng-submit="loginform.$valid && userLogin(user)" novalidate>
+                    <div class="row">
+                      <div class="large-12 columns">
+                        <label>Username
+                          <input type="text" placeholder="" ng-model="user.username" required/>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="large-12 columns">
+                        <label>Password
+                          <input type="password" placeholder="" ng-model="user.password" required/>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="large-12 columns">
+                        <button class="button tiny expand custom">login</button>
+                      </div>
+                    </div>
+                    <div class="row" style="display:none;">
+                      <div class="large-12 columns">
+                        Not a member? <a href="#newbot">Sign up now</a>
+                      </div>
+                    </div>
+                </form>
+              </div>
+
+            </div>
+        </div>
+        <div ng-show="registerShow" class="registerpanel">
+            <div class="row">
+              <div class="large-12 columns">
+                <form name="loginform"  ng-submit="loginform.$valid && userLogin(user)" novalidate>
+                    <div class="row">
+                      <div class="large-12 columns">
+                        <label>Username
+                          <input type="text" placeholder="" ng-model="user.username" required/>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="large-12 columns">
+                        <label>Password
+                          <input type="password" placeholder="" ng-model="user.password" required/>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="large-12 columns">
+                        <button class="button tiny expand custom">login</button>
+                      </div>
+                    </div>
+                    <div class="row" style="display:none;">
+                      <div class="large-12 columns">
+                        Not a member? <a href="#newbot">Sign up now</a>
+                      </div>
+                    </div>
+                </form>
+              </div>
+
+            </div>
+        </div>
+      </section>
+    </div>
+    
+  </nav>
+
+<!-- <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+           <!--  <a class="navbar-brand" href="#/">ACME</a>
+        </div> -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#/services">Services</a>
+                </li>
+                <li><a href="#/pricing">Pricing Table</a>
+                </li>
+                <li><a href="#/about">About</a>
+                </li>
+                <li><a href="#/faq">FAQ</a>
+                </li>
+                <li><a href="#/contact">Contact</a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/blog">List of Posts</a>
+                        </li>
+                        <li><a href="#/blog/post">View One Post</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div> -->
+        <!-- /.navbar-collapse -->
+   <!--  </div> -->
+    <!-- /.container -->
+<!-- </nav> -->

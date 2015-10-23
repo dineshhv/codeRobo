@@ -1,0 +1,8 @@
+<div class="large-12 columns nopadding" ng-include="templateLoc.header"></div>
+<div class="large-12 columns nopadding content" id="main" ng-class="{home: homescreen}" >
+	<div class="large-2 columns nopadding" style="height: 100%;" ng-include="templateLoc.sidebar"></div>
+ 			<div class="large-10 columns" >
+    			<div ui-view="dashContent" style="height:100%"></div>
+    		</div>
+
+</div>
