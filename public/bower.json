@@ -36,6 +36,10 @@
     "ng-simplePagination": "~1.0.3",
     "angular-ui-foundation-pagination": "~0.1.4",
     "ngInfiniteScroll": "~1.2.1",
-    "angular-ui-router": "~0.2.15"
+    "angular-ui-router": "~0.2.15",
+    "ng-table-async": "~0.0.9",
+    "angular-smart-table": "~2.1.4",
+    "si-table": "~0.2.3",
+    "angular-ui-router-styles": "~0.0.6"
   }
 }

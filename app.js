@@ -15,6 +15,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var settings = require('./routes/settings');
 var posts = require('./routes/posts');
+var page = require('./routes/page');
 
 var app = express();
 
@@ -64,6 +65,18 @@ app.use('/posts/search/query', posts);
 app.use('/posts/postid/related/tags/', posts);
 app.use('/posts/id/after/dt', posts);
 app.use('/posts/id/before/dt', posts);
+
+app.use('/page', page);
+app.use('/page/addPost', page);
+app.use('/page/all', page);
+app.use('/page/id', page);
+app.use('/page/current/limit/sort/order/filter', page);
+app.use('/page/viewby/postid', page);
+app.use('/page/search/query', page);
+app.use('/page/postid/related/tags/', page);
+app.use('/page/id/after/dt', page);
+app.use('/page/id/before/dt', page);
+
 
 
 // catch 404 and forward to error handler

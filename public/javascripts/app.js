@@ -21,6 +21,9 @@
 		'codeRobo-managepage',
 		'codeRobo-managepost',
 		'codeRobo-createpost',
+		'codeRobo-createpage',
+		'siTable',
+		'uiRouterStyles',
 		// 'ngProgress',
 		'textAngular',
 		// 'ngNotify',
@@ -68,6 +71,9 @@
 		            controller: 'adminController',
 		            controllerAs: 'adminloginCtrl',
 	              	params : { type: 'admin' },
+				  	data: {
+					    css: 'admin/stylesheets/admin.css'
+					}
 	          })
 	       //    .state('dashboard', {
 		      //       url: "/dashboard",
@@ -94,7 +100,10 @@
 		        	params : { type: 'admin'},
 				  	UIbreadcrumb:{
 				  		name: "Dashboard"
-				  	}
+				  	},
+				  	data: {
+					    css: 'admin/stylesheets/admin.css'
+					}
 		      })
 		      .state('dashboard.managepage', {
 		            url: "/managepage",
@@ -109,6 +118,19 @@
 				  		name: "Manage Page"
 				  	}
 		      })
+		      .state('dashboard.managepage.createpage', {
+		            url: "/createpage",
+		            views: {
+				      'dashContent@dashboard': {
+				        templateUrl: '/admin/createpage.html',
+				        controller: 'createpageController',
+				        params : { type: 'admin' }
+				      }
+				  	},
+				  	UIbreadcrumb:{
+				  		name: "Create Page"
+				  	}
+		      })
 		      .state('dashboard.managepost', {
 		            url: "/managepost",
 		            views: {
@@ -120,7 +142,10 @@
 				  	},
 				  	UIbreadcrumb:{
 				  		name: "Manage Post"
-				  	}
+				  	},
+				  	data: {
+					    css: 'admin/stylesheets/admin.css'
+					}
 		      })
 		      .state('dashboard.managepost.createpost', {
 		            url: "/createpost",
@@ -135,20 +160,7 @@
 				  		name: "Create Post"
 				  	}
 		      })
-		      .state('dashboard.createpost', {
-		            url: "/createpost",
-		            views: {
-				      'dashContent': {
-				        templateUrl: '/admin/createpost.html',
-				        controller: 'createpostController',
-				        params : { type: 'admin' }
-				      }
-				  	},
-				  	UIbreadcrumb:{
-				  		name: "Create Post"
-				  	}
-		      })
-		      .state('dashboard.media', {
+		     .state('dashboard.media', {
 		            url: "/media",
 		            views: {
 				      'dashContent': {

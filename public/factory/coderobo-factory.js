@@ -23,8 +23,22 @@ app.factory('DataService', function ($http) {
 	            });
 	            return promise;
 	        },
+	        getPages: function () {
+	        	this.url='page/all';
+				var promise=$http.get(this.url).success(function (data) {
+					return data;
+	            });
+	            return promise;
+	        },
+	        getPageswithparams: function (params) {
+	        	this.url='page/'+params.current+'/'+params.limit+'/'+params.sortBy+'/'+params.order+'/'+params.postType;
+				var promise=$http.get(this.url).success(function (data) {
+					return data;
+	            });
+	            return promise;
+	        },
 	        getPosts: function (Hash) {
-	        	this.url='posts/'+Hash;
+	        	this.url='posts/all';
 				var promise=$http.get(this.url).success(function (data) {
 					return data;
 	            });
@@ -53,6 +67,13 @@ app.factory('DataService', function ($http) {
 	        },
 	        addPost: function (newpost) {
 	        	this.url='posts/addPost';
+				var promise=$http.post(this.url,newpost).success(function (data) {
+					return data;
+	            });
+	            return promise;
+	        },
+	        addPage: function (newpost) {
+	        	this.url='page/addPost';
 				var promise=$http.post(this.url,newpost).success(function (data) {
 					return data;
 	            });

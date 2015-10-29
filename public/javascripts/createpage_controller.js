@@ -1,9 +1,9 @@
 (function () {
 	"use strict";
 	var hash;
-    var app=angular.module('codeRobo-createpost',[]);
+    var app=angular.module('codeRobo-createpage',[]);
     
-    app.controller('createpostController', 
+    app.controller('createpageController', 
     	[
     	'$http',
     	'$scope', 
@@ -41,7 +41,7 @@
                 // })
                 // $scope.newpost={}
 
-                DataService.addPost($scope.newpost).then(function (response) {
+                DataService.addPage($scope.newpost).then(function (response) {
                  if(response.data.errorCode=='0')
                  {
                     console.log(response)

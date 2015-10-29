@@ -4,7 +4,38 @@
 		<h5 class="font-green bold uppercase">Manage Page</h5>
 	</div>
 	<div class="large-2 columns">
-		<!-- <a class="button tiny">Create page</a> -->
+		<a class="button tiny" ng-click="createPage()">Create Post</a>
 	</div>
-	
+	<table si-table class="widget">
+	    <tr>
+	    	<th><input type="checkbox" si-select-all></th>
+	        <th sort-by="postTitle">Page</th>
+	        <th sort-by="createdOn">Created on</th>
+	    </tr>
+	    <tr si-sortable ng-repeat="page in pages">
+	    	<td><input type="checkbox" ng-model="page.selected"></td>
+	        <td>{{ page.postTitle }}</td>
+	        <td>{{ page.createdOn }}</td>
+	    </tr>
+	    <tfoot>
+		    <tr>
+		        <td colspan="5">
+		            <si-table-pagination
+					    limit=1
+					    first-text="First page"
+					    last-text="Last page"
+					    previous-text="«"
+					    next-text="»" />
+					<!-- <si-table-pagination
+					    limit={{limit}}
+					    total ={{params.total}}
+					    offset="params.offset"
+					    first-text="First page"
+					    last-text="Last page"
+					    previous-text="«"
+					    next-text="»" /> -->
+		        </td>
+		    </tr>
+		</tfoot>
+	</table>
 </div>

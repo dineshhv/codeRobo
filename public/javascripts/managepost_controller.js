@@ -25,8 +25,13 @@
 		    $rootScope.$$childHead.dashscreen = true;
             $scope.createPost = function(){
                $location.path('/dashboard/managepost/createpost') 
-            }    
-            
+            } 
+            DataService.getPosts().then(function (response) {
+                 if(response.data.errorCode=='0')
+                 {
+                    $scope.posts = response.data.response
+                 }
+            });   
     }]);
 
 

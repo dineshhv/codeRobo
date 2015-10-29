@@ -1,8 +1,8 @@
-<div class="large-12 columns nopadding" id="main" ng-class="{home: homescreen}" >
+<div class="large-12 columns nopadding" id="loginmain" ng-class="{home: homescreen}" >
 
-<div class="large-4 large-centered columns" >
+<div class="large-4 large-centered columns widget loginform" >
     <form name="loginform"  ng-submit="loginform.$valid && userLogin()" novalidate>
-    	{{adminloginCtrl.user.username}}
+    	<!-- {{adminloginCtrl.user.username}} -->
  		<div class="row">
  			<div class="large-12 columns" style="text-align:center">
     			<h4>CodeRobo - admin</h4>
@@ -10,15 +10,15 @@
     	</div>
         <div class="row">
           <div class="large-12 columns">
-            <label>Username
-              <input type="text" placeholder="" ng-model="user.username" required/>
+            <label>
+              <input type="text" placeholder="Username" ng-model="user.username" class="inputControlles" required/>
             </label>
           </div>
         </div>
         <div class="row">
           <div class="large-12 columns">
-            <label>Password
-              <input type="password" placeholder="" ng-model="user.password" required/>
+            <label>
+              <input type="password" placeholder="Password" ng-model="user.password" class="inputControlles" required/>
             </label>
           </div>
         </div>

@@ -16,7 +16,7 @@ router.get('/all', function(req, res) {
     var db = req.db;
     
 
-    var collection = db.get('coderobo-posts');
+    var collection = db.get('coderobo-page');
     collection.find({ },function(e,docs){
        if(docs&&docs.length>0)
         {
@@ -32,14 +32,57 @@ router.get('/all', function(req, res) {
 
     
 });
+router.get('/:current/:limit/:sort/:order/:filter', function(req, res) {
+    var db = req.db;
+    
+    var collection = db.get('coderobo-page');
+    if(req.params.order == 'asc')
+        var order = 1
+    else
+        var order = -1
+
+    var sortOrder = {}
+    sortOrder[req.params.sort]  = order
+    
+    if(req.params.filter == 'public')
+    {
+      var query = {"private": false}
+    }
+    else
+    {
+      var query = {}
+    }
+
+    var options = {
+      "skip": req.params.current*req.params.limit,
+      "limit": req.params.limit,
+      "sort": sortOrder
+    }
+    collection.count(query,function(err,count){
+      console.log(count)
+      collection.find(query,options,function(e,docs){
+         if(docs&&docs.length>0)
+          {
+              var returnMsg={"errorCode":0,"response":docs,'total': count}; 
+          }
+          else
+          {
+              var returnMsg={"errorCode":99,"msg":"no response"}; 
+          }
+          res.send(returnMsg);
+      });
+    })
+
+    
+});
 
 router.get('/:id', function(req, res) {
     var db = req.db;
-    var collection = db.get('coderobo-posts');
+    var collection = db.get('coderobo-page');
     var options = {
       "limit": 10,
       "sort": {createdOn: -1}
-  }
+    }
     collection.find({ userID: req.params.id },options,function(e,docs){
       if(docs&&docs.length>0)
         {
@@ -202,7 +245,7 @@ router.post('/addPost', function(req, res) {
     console.log(payload.createdOn)
   if(req.user||payload.userID)
   {
-    var collection = db.get('coderobo-posts');
+    var collection = db.get('coderobo-page');
     
       collection.insert(payload, function (err, doc) {
           if (err) {

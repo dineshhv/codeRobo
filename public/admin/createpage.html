@@ -6,28 +6,26 @@
 			<div class="panel bordered blocksec light">	
 				<div class="large-12 medium-6  block-display">
 					<div class="large-10 columns">
-						<h5 class="font-green bold uppercase">Create New Page</h5>
+						<h5 class="font-green bold uppercase">Create New Post</h5>
 					</div>
 					<div class="large-2 columns">
 						<!-- <a class="button tiny" ng-click="createPost()">Create Post</a> -->
 					</div>
 				</div>
 				<div class="large-12 medium-6 createArea block-display">
-				       	<div class="large-12 medium-6 columns" >
-				            <input type="text"  placeholder="Post Title" ng-model="newpost.postTitle" required/>
-				       	</div>
-				       	<div class="large-12 medium-6 columns" >
-				            <input type="text" placeholder="Alias" ng-model="newpost.postUrl" required/>
-				       	</div>
-				       	<div class="large-12 medium-6 columns" >
-				                   <input type="text" placeholder="Post Short Desc" ng-model="newpost.shortDescp"/>
-				        </div>
-				        <div class="large-12 medium-6 columns" >
-				            <text-angular ng-model="newpost.postContent"></text-angular>
-				       	</div>
-				       	<div class="large-12 medium-6 columns" >
-				            <input type="text" placeholder="Tags" ng-model="newpost.tags" ng-list=", "/>
-				       	</div>
+				              <div class="large-12 medium-6 columns" >
+				                   <input type="text"  placeholder="Post Title" ng-model="newpost.postTitle" required/>
+				              </div>
+				              <div class="large-12 medium-6 columns" >
+				                   <input type="text" placeholder="Alias" ng-model="newpost.postUrl" required/>
+				              </div>
+				              <div class="large-12 medium-6 columns" >
+				                 <text-angular ng-model="newpost.postContent"></text-angular>
+				              </div>
+				              
+				              <div class="large-12 medium-6 columns" >
+				                 <input type="text" placeholder="Tags" ng-model="newpost.tags" ng-list=", "/>
+				              </div>
 				</div>
 			</div>
 		</div>
@@ -57,8 +55,7 @@
 				        </select>
 				    </div>
 				    <div class="large-12 medium-6 nopadding topspace columns" >
-				       	<button class="button tiny custom">Save</button>
-				    	<button class="button tiny custom">Preview</button>
+				       <button class="button tiny custom">Save</button>
 				    </div>
 				</div>
 		</div>

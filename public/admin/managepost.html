@@ -1,10 +1,19 @@
 <div class="dashContent-head blockArea">
 	<bread-crumb></bread-crumb>
 	<div class="large-10 columns">
-		<!-- <h5 class="font-green bold uppercase">Manage Post</h5> -->
+		<h5 class="font-green bold uppercase">Manage Post</h5>
 	</div>
 	<div class="large-2 columns">
 		<a class="button tiny" ng-click="createPost()">Create Post</a>
 	</div>
-	
+	<table si-table class="widget">
+	    <tr>
+	        <th>Page</th>
+	        <th>Created on</th>
+	    </tr>
+	    <tr si-sortable ng-repeat="page in posts">
+	        <td>{{ page.postTitle }}</td>
+	        <td>{{ page.createdOn }}</td>
+	    </tr>
+	</table>
 </div>

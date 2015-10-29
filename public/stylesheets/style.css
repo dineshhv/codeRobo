@@ -1,6 +1,7 @@
 body{
   padding: 0;
   margin:0;
+  font-family: "Open Sans",sans-serif;
 }
 
 p, h1, h2, h3, h4, h5, a, div{
@@ -10,7 +11,7 @@ p, h1, h2, h3, h4, h5, a, div{
   word-spacing: 1px;
 }
 p, h1, h2, h3, h4, h5,{
-    color : #234344;
+    color : #999 !important; //234344
 }
 .columns.nopadding {
   padding-left: 0;
@@ -348,6 +349,20 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 .result .desc p{
   font-size: 12px;
 }
+.widget {
+    display: block;
+    position: relative;
+    margin-bottom: 30px;
+    padding: 15px 20px;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid transparent;
+}
+table.widget {
+    display: table;
+    
+}
+
 footer{
   padding: 10px;
 }
