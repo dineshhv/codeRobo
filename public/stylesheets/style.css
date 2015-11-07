@@ -4,7 +4,7 @@ body{
   font-family: "Open Sans",sans-serif;
 }
 
-p, h1, h2, h3, h4, h5, a, div{
+p, h1, h2, h3, h4, h5, a, div, span{
 
   letter-spacing: .4px;
   font-weight: 200;
@@ -22,7 +22,7 @@ p, h1, h2, h3, h4, h5,{
   background-image: url('/images/download.png');
   margin-top: -12px;
 }
-#main
+#main,#loginmain
 {
   min-height: 500px;
   padding: 10px 20px;
@@ -34,7 +34,7 @@ p, h1, h2, h3, h4, h5,{
   display: block;
 }
 .row{
-  max-width: 90%;
+  /*max-width: 90%;*/
   margin-top: 1%;
 }
 
@@ -74,7 +74,7 @@ p, h1, h2, h3, h4, h5,{
  
   margin-left: 0;
   padding: .2rem .9rem;
-  min-width: 380px;
+  /*min-width: 380px;*/
   overflow-y: auto;
 }
 

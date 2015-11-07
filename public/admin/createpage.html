@@ -2,62 +2,64 @@
 <form name="postform"  ng-submit="postform.$valid && savePost(post)" novalidate>
 	<div class="large-12 medium-12 blockArea">
 		<bread-crumb></bread-crumb>
-		<div class="large-9 medium-6 columns" >
-			<div class="panel bordered blocksec light">	
-				<div class="large-12 medium-6  block-display">
-					<div class="large-10 columns">
-						<h5 class="font-green bold uppercase">Create New Post</h5>
+		<div class="row">
+			<div class="large-9 medium-9 columns" >
+				<div class="panel bordered blocksec light widget">	
+					<div class="large-12 medium-6  block-display">
+						<div class="large-10 columns">
+							<h5 class="font-green bold uppercase">Create New Post</h5>
+						</div>
+						<div class="large-2 columns">
+							<!-- <a class="button tiny" ng-click="createPost()">Create Post</a> -->
+						</div>
 					</div>
-					<div class="large-2 columns">
-						<!-- <a class="button tiny" ng-click="createPost()">Create Post</a> -->
+					<div class="large-12 medium-6 createArea block-display">
+					              <div class="large-12 medium-6 columns" >
+					                   <input type="text"  placeholder="Post Title" ng-model="newpost.postTitle" class="inputControlles"  required/>
+					              </div>
+					              <div class="large-12 medium-6 columns" >
+					                   <input type="text" placeholder="Alias" ng-model="newpost.postUrl" class="inputControlles"  required/>
+					              </div>
+					              <div class="large-12 medium-6 columns" >
+					                 <text-angular ng-model="newpost.postContent"></text-angular>
+					              </div>
+					              
+					              <div class="large-12 medium-6 columns" >
+					                 <input type="text" placeholder="Tags" ng-model="newpost.tags" class="inputControlles"  ng-list=", "/>
+					              </div>
 					</div>
-				</div>
-				<div class="large-12 medium-6 createArea block-display">
-				              <div class="large-12 medium-6 columns" >
-				                   <input type="text"  placeholder="Post Title" ng-model="newpost.postTitle" required/>
-				              </div>
-				              <div class="large-12 medium-6 columns" >
-				                   <input type="text" placeholder="Alias" ng-model="newpost.postUrl" required/>
-				              </div>
-				              <div class="large-12 medium-6 columns" >
-				                 <text-angular ng-model="newpost.postContent"></text-angular>
-				              </div>
-				              
-				              <div class="large-12 medium-6 columns" >
-				                 <input type="text" placeholder="Tags" ng-model="newpost.tags" ng-list=", "/>
-				              </div>
 				</div>
 			</div>
-		</div>
-		<div class="large-3 medium-6 columns " >
-				<div class="panel bordered light">	
-					<span class="font-green bold uppercase">other settings</span>
-					<div class="large-12 medium-6 nopadding topspace columns" >
-						<div class="large-4 medium-6 nopadding columns" >
-							private
-						</div>
-						<div class="large-8 medium-6 nopadding columns" >
-							<div class="switch small round no-margin-bottom">
-							  <input id="on-off" type="checkbox" ng-model="newpost.private">
-							    <label for="on-off">
-							      <span class="switch-on">on</span>
-							      <span class="switch-off">off</span>
-							  </label>
+			<div class="large-3 medium-3 columns " >
+					<div class="panel bordered light widget">	
+						<span class="font-green bold uppercase">other settings</span>
+						<div class="large-12 medium-6 nopadding topspace columns" >
+							<div class="large-4 medium-6 nopadding columns" >
+								private
+							</div>
+							<div class="large-8 medium-6 nopadding columns" >
+								<div class="switch small round no-margin-bottom">
+								  <input id="on-off" type="checkbox" ng-model="newpost.private" >
+								    <label for="on-off">
+								      <span class="switch-on">on</span>
+								      <span class="switch-off">off</span>
+								  </label>
+								</div>
 							</div>
 						</div>
+						<div class="large-12 medium-6 nopadding topspace columns" >
+					        <select  ng-model="newpost.category" class="inputControlles" >
+					        	<option value="category">Select Category</option>
+					          	<option value="post">Posts</option>
+					          	<option value="articles">Articles</option>
+					          	<option value="plugins">Plugin</option>
+					        </select>
+					    </div>
+					    <div class="large-12 medium-6 nopadding topspace columns" >
+					       <button class="button tiny custom">Save</button>
+					    </div>
 					</div>
-					<div class="large-12 medium-6 nopadding topspace columns" >
-				        <select  ng-model="newpost.category">
-				        	<option value="category">Select Category</option>
-				          	<option value="post">Posts</option>
-				          	<option value="articles">Articles</option>
-				          	<option value="plugins">Plugin</option>
-				        </select>
-				    </div>
-				    <div class="large-12 medium-6 nopadding topspace columns" >
-				       <button class="button tiny custom">Save</button>
-				    </div>
-				</div>
+			</div>
 		</div>
 	</div>
 </form>

@@ -40,6 +40,8 @@
     "ng-table-async": "~0.0.9",
     "angular-smart-table": "~2.1.4",
     "si-table": "~0.2.3",
-    "angular-ui-router-styles": "~0.0.6"
+    "angular-ui-router-styles": "~0.0.6",
+    "moment-timezone": "~0.4.1",
+    "moment": "~2.10.6"
   }
 }
