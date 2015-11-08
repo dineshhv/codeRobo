@@ -4,7 +4,7 @@
 	app.directive('breadCrumb',function($state){
 		return {
 			restrict: 'E',
-			templateUrl:'/admin/breadCrumb.html',
+			templateUrl:'/admin/breadcrumb.html',
 			controller: function($scope){
 				$scope.breadCrumbs = [];
 				angular.forEach($state.$current.path, function(value, key) {

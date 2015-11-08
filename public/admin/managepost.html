@@ -8,12 +8,34 @@
 	</div>
 	<table si-table class="widget">
 	    <tr>
+	    	<th><input type="checkbox" si-select-all></th>
 	        <th>Page</th>
 	        <th>Created on</th>
 	    </tr>
 	    <tr si-sortable ng-repeat="page in posts">
+	    	<td><input type="checkbox" ng-model="page.selected"></td>
 	        <td>{{ page.postTitle }}</td>
 	        <td>{{ page.createdOn }}</td>
 	    </tr>
+	    <tfoot>
+		    <tr>
+		        <td colspan="5">
+		            <si-table-pagination
+					    limit=5
+					    first-text="First page"
+					    last-text="Last page"
+					    previous-text="«"
+					    next-text="»" />
+					<!-- <si-table-pagination
+					    limit={{limit}}
+					    total ={{params.total}}
+					    offset="params.offset"
+					    first-text="First page"
+					    last-text="Last page"
+					    previous-text="«"
+					    next-text="»" /> -->
+		        </td>
+		    </tr>
+		</tfoot>
 	</table>
 </div>
